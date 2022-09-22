@@ -1,0 +1,19 @@
+{
+  "name": "query-request",
+  "version": "0.0.4",
+  "description": "A utility for handling common queries in REST API's",
+  "main": "Query.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "utility",
+    "middleware",
+    "express"
+  ],
+  "author": "youssef-ahamid",
+  "license": "ISC",
+  "dependencies": {
+    "fuse.js": "^6.6.2"
+  }
+}
