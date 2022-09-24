@@ -1,6 +1,6 @@
 {
   "name": "query-request",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "A utility for handling common queries in REST API's",
   "main": "Query.js",
   "scripts": {
