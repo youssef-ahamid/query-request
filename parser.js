@@ -25,25 +25,32 @@ module.exports.serialize = (obj, prefix) => {
 
 module.exports.filterByOperation = (operation, data, key, value) => {
   function assertOperation(operation, data, value) {
+    let item = data
+
+    const paths = key.split('.')
+    paths.forEach(path => {
+      item = item[path] || {};
+    });
+
     switch (operation) {
       case "gt":
-        return data > value;
+        return item > value;
       case "lt":
-        return data < value;
+        return item < value;
       case "gte":
-        return data >= value;
+        return item >= value;
       case "lte":
-        return data >= value;
+        return item >= value;
       case "eq":
-        return data == value;
+        return item == value;
       case "neq":
-        return data != value;
+        return item != value;
       case "in":
-        return data.includes(value);
+        return item.includes(value);
       case "nin":
-        return !data.includes(value);
+        return !item.includes(value);
     }
   }
 
-  return data.filter((item) => assertOperation(operation, item[key], value));
+  return data.filter((item) => assertOperation(operation, item, value));
 };
